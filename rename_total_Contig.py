@@ -20,9 +20,9 @@ for i in kk:
 
 
 
-with open('contig_above_1500','w') as file:
+with open('contig_above_1000','w') as file:
 	for i,l in my_dict.items():
-            if len(l) >= 1500:
+            if len(l) >= 1000:
                 name=i.split()[0].lstrip('>')
                 i=f'>{fasta}_{name}'
                 file.writelines([i.strip(),'\n',l,'\n'])
