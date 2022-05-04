@@ -1,9 +1,11 @@
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
+import sys
+input_file=sys.argv[1]
 cluster_name=[]
 my_list=[]
-with open('test2','r') as file:
+with open(input_file,'r') as file:
         for i in file:
                 if not i.startswith('>'):
                         my_list.append(i.split('...')[0].split('>')[1].strip())
@@ -27,7 +29,9 @@ print(my_list)
 print(my_dataframe)
 column=my_dataframe.columns
 row=my_dataframe.index
-with open('test2','r') as file:
+n=1
+with open(input_file,'r') as file:
+        n+=1
         for i in file:
                 if i.startswith('>'):
                         c_name=''.join(i.strip().lstrip('>').split())
@@ -35,14 +39,11 @@ with open('test2','r') as file:
                 if not i.startswith('>'):
                         g_name=i.split('...')[0].split('>')[1].strip()
                         m=row.get_loc(g_name)
-                        print(m,n)
                         my_dataframe.iloc[[m],[n]]=1
+                print((n/3290158)*100,'%')
 print(my_dataframe)
 #df=my_dataframe
 #df.to_csv('data.tsv',sep='t',index=True)
 my_dataframe.to_csv("data.csv")
-~                                                                                                                                                                                                          
-~                                                                                                                                                                                                          
-~                                                                                                                                                                                                          
-~                                                                                                                                                                                                          
-~                                       
+my_dataframe.to_csv("data.tsv",sep='\t')
+~                                             
