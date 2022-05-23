@@ -1,3 +1,4 @@
+for i in $(ls|grep gdc);do cd $i;less colon_genecatalogue.sam |grep -v "^@"|cut -f 3|grep -v "*"|sort|uniq -c|awk 'BEGIN{OFS="\t"}{print $2,$1}' > read_count;cd ..;done#
 import numpy as np
 import pandas as pd
 from tqdm import tqdm
