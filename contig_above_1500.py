@@ -20,7 +20,7 @@ for i in kk:
 
 
 
-with open('contig_above_1500','w') as file:
+with open('rename','w') as file:
 	for i,l in my_dict.items():
-		if len(l) >= 1500:
-			file.writelines([i.strip(),'\n',textwrap.fill(l.strip(),width=80),'\n'])
+		if 1==1:
+			file.writelines([i.strip().split()[0],'\n',textwrap.fill(l.strip(),width=80),'\n'])
