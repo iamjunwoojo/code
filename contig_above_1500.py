@@ -20,7 +20,7 @@ for i in kk:
 
 
 
-with open('rename','w') as file:
+with open('above.1500.fa','w') as file:
 	for i,l in my_dict.items():
-		if 1==1:
+		if len(l)>1500:
 			file.writelines([i.strip().split()[0],'\n',textwrap.fill(l.strip(),width=80),'\n'])
